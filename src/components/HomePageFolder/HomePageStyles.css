@@ -1,0 +1,61 @@
+.main-sizing {
+  height: 86%;
+}
+
+.header-sizing {
+  height: 7%;
+}
+
+.footer-sizing {
+  height: 7%;
+}
+
+.messaging-sizing {
+  width: 30%;
+}
+
+.foryou-sizing {
+  width: 40%;
+}
+
+.challenges-sizing {
+  width: 30%;
+}
+
+.chatitem-sizing {
+  width: 95%;
+  height: 20%;
+}
+
+.chatitem-overflow {
+
+  text-overflow: ellipsis;
+  height: 19%
+}
+
+.custom-scrollbar {
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #3b82f6;
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #2c69f1;
+    /* Slightly darker blue on hover */
+  }
+}
+
+.preview-style {
+  width: 90%;
+  height: 100%;
+}

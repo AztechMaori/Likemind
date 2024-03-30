@@ -1,0 +1,79 @@
+.btn-pop {
+
+  border: none;
+  padding: 10px 20px;
+
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+
+.btn-pop:hover {
+  animation: pulse 1.3s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.button {
+
+  border: 2px solid #ccc;
+  padding: 10px 20px;
+
+  cursor: pointer;
+}
+
+.button:hover {
+  animation: finish 1s infinite;
+}
+
+@keyframes finish {
+  0% {
+    box-shadow: 0 0 0 #ccc;
+  }
+
+  50% {
+    box-shadow: 0 0 15px #fff;
+  }
+
+  100% {
+    box-shadow: 0 0 0 #ccc;
+  }
+}
+
+.custom-scrollbar {
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: black;
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #3b82f6;
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #2c69f1;
+    /* Slightly darker blue on hover */
+  }
+}
+
+.remove-user {
+  top: -4%;
+  right: -4%;
+}
