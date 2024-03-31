@@ -32,6 +32,7 @@ export default function Search(props: SearchProps) {
 
     let url = "http://localhost:3000/search";
     try {
+      props.SetMemberData([])
       let res = await fetch(url, {
         method: "POST",
         credentials: "include",
@@ -43,6 +44,7 @@ export default function Search(props: SearchProps) {
       const data = await res.json();
       console.log(data)
       props.SetMemberData([data])
+      setSearch("")
 
 
 

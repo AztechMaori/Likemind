@@ -1,0 +1,66 @@
+.headbar-sizing {
+  height: 7%;
+}
+
+.main-sizing {
+  height: 93%;
+}
+
+.avatar-header-sizing {
+  height: 7%;
+}
+
+.avatar-body-sizing {
+  height: 93%;
+}
+
+.portfolio-header-sizing {
+  height: 9%;
+}
+
+.portfolio-body-sizing {
+  height: 90%;
+}
+
+.projects-header-sizing {
+  height: 6%;
+}
+
+.projects-body-sizing {
+  height: 94%;
+}
+
+.custom-scrollbar {
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #3b82f6;
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #2c69f1;
+    /* Slightly darker blue on hover */
+  }
+}
+
+.project-item-sizing {
+  width: 95%;
+  height: 20%;
+}
+
+.project-item-header-sizing {
+  height: 15%;
+}
+
+.project-item-body-sizing {
+  height: 85%;
+}
