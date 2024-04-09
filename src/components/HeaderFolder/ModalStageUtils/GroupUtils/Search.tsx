@@ -1,9 +1,10 @@
-import { createSignal } from "solid-js"
+import { createSignal, type Setter } from "solid-js"
 import type { SetStoreFunction } from "solid-js/store"
 import { type MemberData } from "./GroupTypes"
 
 interface SearchProps {
   SetMemberData: SetStoreFunction<MemberData[]>
+  SetLoading: Setter<boolean>
 }
 
 
@@ -32,7 +33,8 @@ export default function Search(props: SearchProps) {
 
     let url = "http://localhost:3000/search";
     try {
-      props.SetMemberData([])
+      props.SetLoading(true)
+
       let res = await fetch(url, {
         method: "POST",
         credentials: "include",
@@ -43,8 +45,9 @@ export default function Search(props: SearchProps) {
       });
       const data = await res.json();
       console.log(data)
-      props.SetMemberData([data])
-      setSearch("")
+      props.SetMemberData([data]);
+      props.SetLoading(false);
+      setSearch("");
 
 
 

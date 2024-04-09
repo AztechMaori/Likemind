@@ -1,4 +1,5 @@
 import { createSignal, onCleanup, type Setter } from "solid-js";
+import Message, { Notification } from "../Utils/Notification";
 
 interface Props {
   setModal: Setter<boolean>;
@@ -10,17 +11,7 @@ export default function Login(props: Props) {
   const [notif, setNotif] = createSignal(false);
   const [message, setMessage] = createSignal("");
 
-  function Notification() {
-    setNotif(true);
 
-    const timeout = setTimeout(() => {
-      setNotif(false);
-    }, 1500);
-
-    onCleanup(() => {
-      clearTimeout(timeout);
-    });
-  }
 
   async function handleLogin() {
     event?.preventDefault();
@@ -45,10 +36,10 @@ export default function Login(props: Props) {
       setPassword("");
       if (res.status == 401) {
         setMessage("UNAUTHORIZED");
-        Notification();
+        Notification(setNotif);
       } else if (res.status == 500) {
-        setMessage("INTERNL SERVER ERROR");
-        Notification();
+        setMessage("No Existing Account Matches The Provided Credentials");
+        Notification(setNotif);
       } else {
         window.location.href = "http://localhost:4321"
       }
@@ -60,11 +51,8 @@ export default function Login(props: Props) {
   return (
     <div class="min-h-screen bg-black pb-20  mr-4 flex items-center justify-center bg overflow-auto">
       {/* // */}
-      {notif() && (
-        <div class="fixed top-0 left-0 w-full bg-yellow-300 p-4 text-center">
-          <p>{message()}</p>
-        </div>
-      )}
+      {notif() && <Message message={message()} />}
+
       {/* // */}
       <form
         onSubmit={handleLogin}

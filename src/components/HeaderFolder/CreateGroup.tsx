@@ -1,4 +1,4 @@
-import { createSignal, type Setter } from "solid-js/types/server/reactive.js"
+import { createSignal, type Setter } from "solid-js"
 import "./button.css"
 import Search from "./ModalStageUtils/GroupUtils/Search"
 import SearchedUser from "./ModalStageUtils/GroupUtils/SearchedUser"
@@ -20,6 +20,7 @@ interface CreateGroupProps {
 export default function CreateGroup(props: CreateGroupProps) {
 
   const [memberdata, SetMemberData] = createStore<MemberData[]>([]);
+  const [loading, SetLoading] = createSignal(false);
 
 
 
@@ -28,8 +29,8 @@ export default function CreateGroup(props: CreateGroupProps) {
 
       <div class="h-full w-full bg-purple-600 grid grid-cols-5 overflow-y-auto  custom-scrollbar ">
         <div class="col-span-2 h-5/6 bg-rose-500 overflow-y-auto w-full overflow-x-visible">
-          <Search SetMemberData={SetMemberData} />
-          <SearchedUser MemberData={memberdata} setConfirmedUsers={props.setConfirmedUsers} ConfirmedUsers={props.ConfirmedUsers} />
+          <Search SetMemberData={SetMemberData} SetLoading={SetLoading} />
+          <SearchedUser MemberData={memberdata} setConfirmedUsers={props.setConfirmedUsers} ConfirmedUsers={props.ConfirmedUsers} loading={loading()} />
         </div>
         <div class="col-span-3 h-5/6 bg-green-600 overflow-y-auto">
           <FinalisedUser ConfirmedUser={props.ConfirmedUsers} setConfirmedUsers={props.setConfirmedUsers} />

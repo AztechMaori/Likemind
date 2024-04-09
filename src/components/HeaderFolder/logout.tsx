@@ -36,8 +36,9 @@ export default function Logout() {
 
   return (
     <>
-      <button onClick={logoutSession} class="text-1xl font-bold text-blue-500 hover:text-yellow-500 transition-colors duration-300">
-        Logout</button>
+      <button onClick={logoutSession} class="text-1xl font-bold border rounded-full w-20 h-10 pr-2 pl-2 min-h-fit min-w-fit bg-black  text-blue-500 hover:text-yellow-500 transition-colors duration-300">
+        Logout
+      </button>
 
     </>
   )

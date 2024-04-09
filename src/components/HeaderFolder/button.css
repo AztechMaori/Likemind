@@ -77,3 +77,20 @@
   top: -4%;
   right: -4%;
 }
+
+.avatar-sizing {
+  width: 30%;
+}
+
+.body-sizing {
+  width: 60%;
+}
+
+.availability {
+  width: 10%;
+}
+
+.option-sizing {
+  height: 17%;
+  width: 90%;
+}
