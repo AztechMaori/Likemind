@@ -36,12 +36,18 @@ export default function Login(props: Props) {
       setPassword("");
       if (res.status == 401) {
         setMessage("UNAUTHORIZED");
-        Notification(setNotif);
-      } else if (res.status == 500) {
+        Notification(setNotif, 1750);
+      }
+      else if (res.status == 423) {
+        setMessage("You are already logged into an existing account!")
+        Notification(setNotif, 1750);
+        window.location.href = "http://localhost:4321";
+      }
+      else if (res.status == 500) {
         setMessage("No Existing Account Matches The Provided Credentials");
-        Notification(setNotif);
+        Notification(setNotif, 1750);
       } else {
-        window.location.href = "http://localhost:4321"
+        window.location.href = "http://localhost:4321";
       }
     } catch (err) {
       console.log(`there was an error: ${err}`);

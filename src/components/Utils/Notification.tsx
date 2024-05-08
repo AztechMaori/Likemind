@@ -1,15 +1,15 @@
-import { onCleanup, type Setter } from "solid-js";
+import { createEffect, onCleanup, type Setter } from "solid-js";
 import { createSignal } from "solid-js";
 
 
-export function Notification(setNotif: Setter<boolean>) {
+export function Notification(setNotif: Setter<boolean>, time: number) {
 
 
   setNotif(true);
 
   const timeout = setTimeout(() => {
     setNotif(false);
-  }, 1750);
+  }, time);
 
   onCleanup(() => {
     clearTimeout(timeout);
@@ -29,4 +29,21 @@ export default function Message(props: MessageProps) {
       <div class="w-full h-full flex justify-center items-center min-w-fit min-h-fit font-bold text-2xl ">{props.message}</div>
     </div>
   )
+}
+
+
+export function Countdown(count: number, setCount: Setter<number>) {
+
+
+  createEffect(() => {
+    const intervalId = setInterval(() => {
+      if (count > 0) {
+        setCount(count - 1);
+      }
+    }, 1000);
+
+    return () => clearInterval(intervalId);
+  }, [count]);
+
+
 }

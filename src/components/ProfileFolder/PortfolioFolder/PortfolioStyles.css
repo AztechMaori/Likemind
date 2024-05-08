@@ -1,0 +1,251 @@
+.portfolio-triple-sizing {
+  height: 100%;
+  width: 100%;
+  display: flex;
+
+}
+
+.portfolio-item-sizing {
+  height: 95%;
+  width: 30%;
+}
+
+.portfolio-item-header {
+  height: 20%;
+}
+
+.portfolio-item-body {
+  height: 80%;
+}
+
+.portfolio-setting-sizing {
+  height: 17%;
+  width: 95%;
+
+}
+
+/* Layout for mobile screens */
+
+.portfolio-setting-title {
+  height: 30%;
+}
+
+.portfolio-setting-body {
+  height: 70%;
+}
+
+.portfolio-setting-input {
+  width: 95%;
+}
+
+.portfolio-creation-body {
+  height: 75%;
+}
+
+.submit-settings {
+  height: 10%;
+}
+
+
+
+.fetched-portfolio-body {
+  height: 90%;
+}
+
+.trait-box {
+  height: 95%;
+  width: 95%;
+}
+
+.settings-box {
+  height: 97%;
+  width: 95%;
+}
+
+.pop-on-hover {
+  transform: translateY(0);
+  /* No initial translation */
+  transition: transform 0.3s ease-in-out;
+  /* Smooth transition */
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+  /* Subtle shadow for depth */
+}
+
+.pop-on-hover:hover {
+  transform: translateY(-6px);
+  /* Move element up slightly */
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+  /* Increase shadow on hover */
+}
+
+.trait-header {
+  height: 15%;
+}
+
+.back-and-forth {
+  height: 5%;
+}
+
+
+
+.trait-body {
+  height: 80%;
+}
+
+.trait-item-body {
+  height: 45%;
+  width: 45%;
+}
+
+.portfolio-title-input {
+  width: 85%;
+}
+
+.trait-creation-header {
+  height: 10%;
+}
+
+.trait-creation-body {
+  height: 90%;
+}
+
+.talent-input-sizing {
+  height: 20%;
+}
+
+.talent-input {
+  width: 95%;
+  height: 50%;
+}
+
+.triple-select {
+  height: 70%;
+}
+
+
+.skill-level {
+  height: 50%;
+  width: 100%;
+}
+
+.finalise-div {
+  height: 10%;
+  width: 100%;
+}
+
+.finalise-button {
+  height: 90%;
+  width: 95%;
+}
+
+.skill-level-center {
+  text-align: center;
+}
+
+
+
+.triple-select-inner {
+  height: 95%;
+  width: 97%;
+}
+
+.special-number-box {
+  width: 30%;
+  height: 78%;
+}
+
+.special-number-header {
+  height: 30%;
+}
+
+.special-number-body {
+  height: 70%;
+}
+
+.experience-header {
+  height: 20%;
+}
+
+.experience-body {
+  height: 80%;
+}
+
+.experience-list-item {
+  height: 32%;
+  width: 97%;
+}
+
+
+.experience-item-input {
+  width: 70%;
+}
+
+.final-stage-header {
+  height: 15%;
+}
+
+
+
+
+
+
+@media only screen and (max-width: 1000px) {
+  .portfolio-item-sizing {
+    width: 95%;
+    height: 30%;
+  }
+
+  .portfolio-setting-title {
+    height: 40%;
+  }
+
+  .portfolio-setting-body {
+    height: 60%;
+  }
+
+
+
+  .portfolio-triple-sizing {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .portfolio-setting-sizing {
+    height: 33%;
+    width: 90%;
+  }
+
+  .trait-creation-header {
+    height: 15%
+  }
+
+
+  .talent-input-sizing {
+    height: 30%;
+  }
+
+  .triple-select {
+    height: 70%;
+  }
+
+  .triple-select-dir {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .skill-level {
+    height: 100%;
+    width: 50%;
+  }
+
+  .finalise-div {
+    width: 100%;
+    height: 10%;
+
+
+  }
+
+
+
+
+}

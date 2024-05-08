@@ -42,10 +42,10 @@ export default function SignUp(props: Props) {
 
       if (response.status == 401) {
         setMessage("UNAUTHORIZED");
-        Notification(setNotif);
+        Notification(setNotif, 1750);
       } else if (response.status == 500) {
-        setMessage("INTERNAL SERVER ERROR");
-        Notification(setNotif);
+        setMessage("Username or Email is already taken");
+        Notification(setNotif, 1750);
       }
       else {
         window.location.href = "http://localhost:4321"

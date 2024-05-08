@@ -5,8 +5,8 @@ import "../../button.css"
 
 interface SearchedUserProps {
   MemberData: MemberData[]
-  setConfirmedUsers: SetStoreFunction<MemberData[]>
-  ConfirmedUsers: MemberData[]
+  setConfirmedPortfolio: SetStoreFunction<MemberData[]>
+  ConfirmedPortfolio: MemberData[]
   loading: boolean
 }
 
@@ -31,7 +31,7 @@ export default function SearchedUser(props: SearchedUserProps) {
                     </div>
                     <div class="w-full h-1/2 flex gap-2 justify-center bg-black">
                       <button class=" w-20 rounded-full bg-pink-500 hover:bg-emerald-500 duration-300">Traits</button>
-                      <button class="text-white w-20 rounded-full bg-blue-300 hover:bg-emerald-500 duration-300" onClick={() => { confirm_user(props.setConfirmedUsers, props.ConfirmedUsers, item) }}>Select</button>
+                      <button class="text-white w-20 rounded-full bg-blue-300 hover:bg-emerald-500 duration-300" onClick={() => { confirm_user(props.setConfirmedPortfolio, props.ConfirmedPortfolio, item) }}>Select</button>
                     </div>
                   </div>
                   <div class="availability h-full flex flex-col bg-yellow-50">

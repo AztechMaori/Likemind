@@ -14,7 +14,7 @@ export default function PersonalProfile() {
           </h2>
           <div class=" w-full avatar-body-sizing  bg-purple-800">
             <div class="w-full h-5/6 bg-green-700 "></div>
-            <div class="w-full flex items-center justify-evenly h-1/6 bg-black ">
+            <div class="w-full flex items-center justify-evenly h-1/6 bg-purple-800 ">
               <Logout />
             </div>
           </div>
@@ -30,9 +30,15 @@ export default function PersonalProfile() {
         <h2 class="font-bold w-full portfolio-header-sizing items-center  bg-black flex justify-center">
           <span class="border-2 border-black border-b-white text-white">Portfolio Editor</span>
         </h2>
-        <div class="w-full portfolio-body-sizing bg-purple-800 "></div>
+        <div class="w-full flex justify-center items-center portfolio-body-sizing bg-black ">
+          <button onclick={() => { clickme() }} class="text-3xl text-blue-500 hover:text-yellow-500 duration-300">View Portfolios</button>
+        </div>
 
       </div>
     </div >
   )
+}
+
+function clickme() {
+  window.location.href = "http://localhost:4321/portfolio"
 }
