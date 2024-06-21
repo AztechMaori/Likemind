@@ -1,5 +1,6 @@
-import { createSignal, onCleanup, type Setter } from "solid-js";
-import Message, { Notification } from "../Utils/Notification";
+import { createSignal, type Setter } from "solid-js";
+import AuthMessage from "../Utils/Notification";
+import { handleLogin, type handleLoginProps } from "./auth_utils";
 
 interface Props {
   setModal: Setter<boolean>;
@@ -8,60 +9,28 @@ interface Props {
 export default function Login(props: Props) {
   const [email, setEmail] = createSignal("");
   const [password, setPassword] = createSignal("");
-  const [notif, setNotif] = createSignal(false);
-  const [message, setMessage] = createSignal("");
+  const [notif, setNotif] = createSignal("");
 
-
-
-  async function handleLogin() {
-    event?.preventDefault();
-
-    const user_data = {
-      email: email(),
-      password: password(),
-    };
-
-    const url = "http://localhost:3000/login";
-    try {
-      const res = await fetch(url, {
-        method: "POST",
-        credentials: "include",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(user_data),
-      });
-      console.log(`the response was: ${res.status}`);
-      setEmail("");
-      setPassword("");
-      if (res.status == 401) {
-        setMessage("UNAUTHORIZED");
-        Notification(setNotif, 1750);
-      }
-      else if (res.status == 423) {
-        setMessage("You are already logged into an existing account!")
-        Notification(setNotif, 1750);
-        window.location.href = "http://localhost:4321";
-      }
-      else if (res.status == 500) {
-        setMessage("No Existing Account Matches The Provided Credentials");
-        Notification(setNotif, 1750);
-      } else {
-        window.location.href = "http://localhost:4321";
-      }
-    } catch (err) {
-      console.log(`there was an error: ${err}`);
-    }
+  const handle_login_props: handleLoginProps = {
+    password: password(),
+    email: email(),
+    setEmail: setEmail,
+    setPassword: setPassword,
+    SetNotif: setNotif,
   }
+
+
+
 
   return (
     <div class="min-h-screen bg-black pb-20  mr-4 flex items-center justify-center bg overflow-auto">
-      {/* // */}
-      {notif() && <Message message={message()} />}
 
-      {/* // */}
+      {(notif() != "") && (<AuthMessage notif={notif()} />)}
+
+
+
       <form
-        onSubmit={handleLogin}
+        onSubmit={() => { handleLogin(handle_login_props) }}
         class="bg-black p-8 w-96  rounded-lg shadow-lg "
       >
         <div class="flex justify-center">
@@ -69,6 +38,7 @@ export default function Login(props: Props) {
             onClick={() => props.setModal(false)}
             class="text-2xl font-bold mb-4 rounded-full p-2  pl-10 pr-10 bg-blue-400 text-white ease-in-out hover:bg-red-500 transition duration-300  transform hover:scale-105"
           >
+
             Login
           </button>
         </div>

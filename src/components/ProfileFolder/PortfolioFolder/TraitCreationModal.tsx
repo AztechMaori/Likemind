@@ -46,7 +46,7 @@ function TraitCreationBody(props: TraitCreationModalProps) {
   //maintaing Trait State for editing
   const created_traits_copy = props.Created_Traits[props.trait_number - 1];
 
-  const local_trait_data: any[] = [created_traits_copy?.talent, created_traits_copy?.skilllevel, created_traits_copy?.years, created_traits_copy?.rando];
+  const local_trait_data: any[] = [created_traits_copy?.talent, created_traits_copy?.skill_level, created_traits_copy?.years, created_traits_copy?.rando];
 
   let base_exp = created_traits_copy?.past_exp
   base_exp = base_exp ?? []

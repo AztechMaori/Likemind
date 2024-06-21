@@ -37,13 +37,19 @@ export interface InputProps {
 
 export interface Trait {
   talent: string,
-  skilllevel: number,
+  skill_level: number,
   years: number,
   rando: number,
   past_exp: string[],
 }
 
-//TraitCreation
+//TraitCreation/Upload
+
+export interface UploadPortfolioProps {
+  settings: any[],
+  Created_Traits: Trait[],
+  title: string,
+}
 
 export interface TraitCreationProps {
   Created_Traits: Trait[]

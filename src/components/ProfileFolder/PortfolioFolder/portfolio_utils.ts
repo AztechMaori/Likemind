@@ -1,7 +1,51 @@
 import type { Setter } from "solid-js"
-import type { FinaliseTraitsProps, LocalUpdateSettingsArgs, SubmitSettingsProps, Trait } from "./PortfolioTypes";
+import type { FinaliseTraitsProps, LocalUpdateSettingsArgs, SubmitSettingsProps, Trait, UploadPortfolioProps } from "./PortfolioTypes";
 import type { SetStoreFunction } from "solid-js/store";
-import { array } from "zod";
+
+
+//CreatePortfolio.tsx
+//
+export async function UploadPortfolio(args: UploadPortfolioProps) {
+  const url = "http://localhost:3000/createport"
+
+  const settings = args.settings;
+
+  const settings_object = {
+    location: settings[0],
+    incognito: settings[1],
+    child_friendly: settings[2],
+    group_size: parseInt(settings[3]),
+    tenure: parseInt(settings[4])
+  }
+
+  const portfolio_data = {
+    title: args.title,
+    settings: settings_object,
+    created_traits: args.Created_Traits
+  }
+
+
+
+
+
+  try {
+    const res = await fetch(url, {
+      method: "POST",
+      credentials: "include",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(portfolio_data),
+    });
+    console.log(res.status)
+
+  }
+  catch (err) {
+    console.log(`there was an error: ${err}`);
+
+  }
+
+}
 
 //PortfolioSettings
 
@@ -38,7 +82,7 @@ export function go_back(trait_num: number, SetTrait_Num: Setter<number>, SetStag
 // TraitCreationModal.tsx
 export function UpdateNumberInput(local_trait_data: any[], index: number, input: any) {
   index = index + 1;
-  local_trait_data[index] = input;
+  local_trait_data[index] = parseInt(input);
 }
 
 export function UpdateTalentInput(local_trait_data: any[], input: any) {
@@ -56,7 +100,6 @@ export function UpdatePastExperience(past_exp: string[], SetPast_Exp: SetStoreFu
 }
 
 export function RemovePastExperience(given_index: number, past_exp: string[], SetPast_Exp: SetStoreFunction<string[]>) {
-  const past_exp_copy = [...past_exp];
   const new_exp = past_exp.filter((_, index) => index !== given_index)
   SetPast_Exp(new_exp)
 }
@@ -67,7 +110,7 @@ export function finalise_trait(args: FinaliseTraitsProps) {
 
   const new_trait: Trait = {
     talent: local_trait_data[0],
-    skilllevel: local_trait_data[1],
+    skill_level: local_trait_data[1],
     years: local_trait_data[2],
     rando: local_trait_data[3],
     past_exp: args.past_exp

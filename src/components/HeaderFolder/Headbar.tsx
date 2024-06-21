@@ -1,5 +1,8 @@
 
+import { createSignal } from "solid-js";
+import { trial, type HandleRequestProps, HandleRequest } from "../Utils/RouteHandler";
 import ProjectCreationModal from "./CreateProject";
+import Message from "../Utils/Notification";
 
 interface HeadbarProps {
   authenticated: boolean;
@@ -7,7 +10,10 @@ interface HeadbarProps {
 
 
 
+
+
 export default function Headbar(props: HeadbarProps) {
+
 
   return (
     <>
@@ -41,6 +47,12 @@ export default function Headbar(props: HeadbarProps) {
                 class="text-1xl font-bold text-blue-500 hover:text-yellow-500 transition-colors duration-300"
               >
                 Profile
+              </a>
+              <a
+                href="/chats/"
+                class="text-1xl font-bold text-blue-500 hover:text-yellow-500 transition-colors duration-300"
+              >
+                Chats
               </a>
             </nav>
           </div>

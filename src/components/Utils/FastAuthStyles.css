@@ -1,0 +1,53 @@
+.fast_auth_sizing {
+  height: 50%;
+  width: 33%;
+}
+
+.input_sizing {
+  width: 70%;
+  height: 75%;
+}
+
+
+
+@media only screen and (max-width:1000px) {
+  .fast_auth_sizing {
+    height: 35%;
+    width: 60%;
+  }
+
+  .input_sizing {
+    width: 70%;
+    height: 50%;
+  }
+
+}
+
+.on_login {
+  background-color: rgb(37, 99, 233);
+  color: white;
+}
+
+.off_login {
+  color: white;
+}
+
+.email_title {
+  width: 30%;
+}
+
+.pop-on-hover {
+  transform: translateY(0);
+  /* No initial translation */
+  transition: transform 0.3s ease-in-out;
+  /* Smooth transition */
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+  /* Subtle shadow for depth */
+}
+
+.pop-on-hover:hover {
+  transform: translateY(-6px);
+  /* Move element up slightly */
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+  /* Increase shadow on hover */
+}

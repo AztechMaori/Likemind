@@ -1,5 +1,6 @@
-import { createSignal, onCleanup, type Setter } from "solid-js";
-import Message, { Notification } from "../Utils/Notification";
+import { createSignal, type Setter } from "solid-js";
+import { AuthMessage } from "../Utils/Notification";
+import { handleSignIn, type handleSignInProps } from "./auth_utils";
 
 interface Props {
   setModal: Setter<boolean>;
@@ -10,79 +11,24 @@ export default function SignUp(props: Props) {
   const [username, setUsername] = createSignal("");
   const [email, setEmail] = createSignal("");
   const [password, setPassword] = createSignal("");
-  const [notif, setNotif] = createSignal(false);
-  const [message, setMessage] = createSignal("");
+  const [notif, setNotif] = createSignal("");
 
-
-
-  async function handleSignIn() {
-    event?.preventDefault();
-
-    const user_data = {
-      username: username(),
-      email: email(),
-      password: password(),
-    };
-
-    const url = "http://localhost:3000/signup";
-
-    try {
-      const response = await fetch(url, {
-        method: "POST",
-        credentials: "include",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(user_data),
-      });
-      setUsername("");
-      setPassword("");
-      setEmail("");
-      console.log(response.status);
-
-      if (response.status == 401) {
-        setMessage("UNAUTHORIZED");
-        Notification(setNotif, 1750);
-      } else if (response.status == 500) {
-        setMessage("Username or Email is already taken");
-        Notification(setNotif, 1750);
-      }
-      else {
-        window.location.href = "http://localhost:4321"
-      }
-    } catch (err) {
-      console.log(err);
-    }
+  const handle_signin_props: handleSignInProps = {
+    email: email(),
+    password: password(),
+    username: username(),
+    setPassword: setPassword,
+    setEmail: setEmail,
+    setUsername: setUsername,
+    SetNotif: setNotif,
   }
 
-  async function cookie_backend() {
-    const url = "http://localhost:3000/time";
-
-    const res = fetch(url, {
-      method: "GET",
-      credentials: "include",
-    });
-  }
-
-  async function trial() {
-    const url = "http://localhost:3000/check";
-    try {
-      const res = await fetch(url, {
-        method: "GET",
-        credentials: "include",
-      });
-      console.log(`succesfull operation ${res.status}`);
-    } catch (err) {
-      console.log(`there was an error, ${err}`);
-    }
-  }
-  ;
 
   return (
     <div class=" min-h-screen bg-black flex items-center justify-center overflow-auto ">
-      {notif() && <Message message={message()} />}
+      {(notif() != "") && <AuthMessage notif={notif()} />}
       <form
-        onSubmit={handleSignIn}
+        onSubmit={() => { handleSignIn(handle_signin_props) }}
         class="bg-black p-8 w-96 rounded-lg shadow-lg"
       >
         <div class="flex justify-center">

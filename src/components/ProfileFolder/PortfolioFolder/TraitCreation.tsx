@@ -89,7 +89,7 @@ function CreatedTrait(props: CreatedTraitProps) {
     <div class="trait-item-body bg-blue-500 p-2  rounded-lg">
       <div class="trait-header bg-white w-full rounded-full flex justify-center items-center text-bold text-2xl">Trait {props.trait_number}</div>
       <div>{trait_object.talent}</div>
-      <div>{trait_object.skilllevel}</div>
+      <div>{trait_object.skill_level}</div>
       <div>{trait_object.years}</div>
       <div>{trait_object.rando}</div>
       <div>{trait_object.past_exp}</div>

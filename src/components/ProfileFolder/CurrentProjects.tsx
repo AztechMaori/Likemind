@@ -2,6 +2,7 @@ import "./ProfileStyles.css"
 
 export default function CurrentProjects() {
   const array: number[] = [1, 2, 3, 4, 5, 6, 7, 8]
+
   return (
     <div class="w-full h-full bg-white custom-scrollbar">
       <h1 class="w-full projects-header-sizing bg-black items-center justify-center flex ">
