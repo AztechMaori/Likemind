@@ -5,3 +5,124 @@
 .main-sizing {
   height: 93%;
 }
+
+/* People Styles */
+.people {
+  height: 100%;
+  width: 30%;
+}
+
+.username-box {
+  height: 8%;
+  width: 100%;
+}
+
+.username {
+  font-size: 1rem;
+}
+
+.username-position {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding-left: 5%;
+}
+
+.people-list {
+  height: 92%;
+  width: 100%;
+}
+
+.people-item-box {
+  width: 92%;
+  height: 18%;
+}
+
+/* Chat Styles */
+
+.chat {
+  height: 100%;
+  width: 70%;
+}
+
+.members-box {
+  height: 8%;
+  width: 100%;
+}
+
+.chat-box {
+  height: 92%;
+  width: 100%;
+}
+
+.message-area {
+  height: 90%;
+  width: 100%;
+}
+
+.message-input-box {
+  height: 10%;
+  width: 100%;
+}
+
+.message-input {
+  width: 97%;
+  height: 70%;
+}
+
+.emoji {
+  width: 10%;
+  height: 100%;
+}
+
+.input {
+  width: 75%;
+  height: 100%;
+}
+
+.extra {
+  width: 15%;
+  height: 100%;
+}
+
+/* Phone Sizing */
+
+@media only screen and (max-width:1000px) {
+
+  .username-box {
+    height: 7%;
+    width: 100%;
+  }
+
+
+  .username {
+    font-size: 2rem;
+  }
+
+  .username-position {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .people {
+    width: 100%;
+    height: 100%;
+  }
+
+  .people-list {
+    height: 93%;
+    width: 100%;
+  }
+
+  .people-item-box {
+    height: 14%;
+    width: 92%;
+  }
+
+  /* Responsive Chat Styles */
+
+  .chat {
+    display: none;
+  }
+}

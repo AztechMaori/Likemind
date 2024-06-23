@@ -1,3 +1,21 @@
+.pop-on-hover {
+  transform: translateY(0);
+  /* No initial translation */
+  transition: transform 0.3s ease-in-out;
+  /* Smooth transition */
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+  /* Subtle shadow for depth */
+}
+
+.pop-on-hover:hover {
+  transform: translateY(-6px);
+  /* Move element up slightly */
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+  /* Increase shadow on hover */
+}
+
+
+
 .main-sizing {
   height: 86%;
 }
@@ -71,6 +89,10 @@
 }
 
 
+.portfolio-select {
+  width: 7%;
+  height: 60%;
+}
 
 .name {
   height: 13%;
@@ -78,16 +100,21 @@
 
 .central {
   height: 87%;
+  width: 100%;
 }
 
 .top {
   height: calc(100%/3);
 }
 
+.group-box {
+  width: 92%;
+  height: 92%;
+}
 
 .top-item {
-  height: 85%;
-  width: 40%;
+  width: 28%;
+  height: 95%;
 }
 
 .bottom-left-left {
@@ -148,8 +175,18 @@
   height: calc(100%/3);
 }
 
+.query-item {
+  width: 95%;
+  height: 35%;
+}
+
 
 @media only screen and (max-width:1000px) {
+  .query-item {
+    height: 23%;
+    width: 95%;
+  }
+
   .bottom-left-right-item {
     height: 85%;
     width: 92%;
@@ -192,7 +229,8 @@
   }
 
   .top-item {
-    height: 70%;
+    height: 60%;
+    width: 28%;
   }
 
 
