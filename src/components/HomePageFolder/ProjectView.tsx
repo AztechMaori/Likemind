@@ -26,7 +26,7 @@ export default function ProjectView(props: ProjectViewProps) {
             <div class="flex flex-wrap justify-evenly p-2 rounded-lg gap-3 h-full overflow-x-auto pt-2 w-full">
               {groups.map(value => {
                 return (
-                  <div class="top-item flex flex-wrap bg-sky-300 p-2 rounded-lg  ">
+                  <div class="top-item flex flex-wrap bg-sky-300 p-2 mb-2 rounded-lg  ">
                     <div class="h-1/5 w-full flex justify-center items-center bg-black text-white rounded-lg mb-1">Title</div>
                     <div class="h-4/5 w-full bg-white rounded-lg flex"></div>
                   </div>

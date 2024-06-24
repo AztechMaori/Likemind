@@ -18,7 +18,7 @@
 }
 
 .username {
-  font-size: 1rem;
+  font-size: 1.5rem;
 }
 
 .username-position {
@@ -85,6 +85,30 @@
   height: 100%;
 }
 
+.chat-mobile {
+  height: 100%;
+  width: 70%;
+}
+
+.back-button {
+  display: none;
+}
+
+.display-name {
+  width: 100%;
+  height: 100%;
+}
+
+.gcname {
+  width: 20%;
+  height: 100%;
+}
+
+.chat-members {
+  width: 80%;
+  height: 100%;
+}
+
 /* Phone Sizing */
 
 @media only screen and (max-width:1000px) {
@@ -125,4 +149,51 @@
   .chat {
     display: none;
   }
+
+  .chat-mobile {
+    width: 100%;
+    height: 100%;
+  }
+
+  .people-list-mobile {
+    display: none;
+  }
+
+  .back-button {
+    display: flex;
+    width: 15%;
+    height: 100%;
+  }
+
+  .display-gcname {
+    height: 100%;
+    width: 85%;
+  }
+
+  .gcname {
+    width: 22%;
+    height: 100%;
+    text-overflow: ellipsis;
+  }
+
+  .chat-members {
+    width: 78%;
+    height: 100%;
+  }
+}
+
+.pop-on-hover {
+  transform: translateY(0);
+  /* No initial translation */
+  transition: transform 0.3s ease-in-out;
+  /* Smooth transition */
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+  /* Subtle shadow for depth */
+}
+
+.pop-on-hover:hover {
+  transform: translateY(-6px);
+  /* Move element up slightly */
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+  /* Increase shadow on hover */
 }

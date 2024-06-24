@@ -10,7 +10,7 @@ import "./chattypes"
 export default function ChatWrapper() {
   const [group, SetGroup] = createStore<string[]>([])
   const [gcname, SetGcname] = createSignal("")
-  const people = [,]
+
 
   const chat1: Chat = {
     name: "Brown Government",
@@ -32,8 +32,8 @@ export default function ChatWrapper() {
           <Headbar authenticated={true} />
         </div>
         <div class="main-sizing bg-blue-500 flex">
-          <PeopleList chats={chats} setGroup={SetGroup} setGcname={SetGcname} />
-          <ChatModal gc_name={gcname()} members={group} />
+          <PeopleList chats={chats} setGroup={SetGroup} setGcname={SetGcname} gcname={gcname()} />
+          <ChatModal SetGcname={SetGcname} gc_name={gcname()} members={group} />
         </div>
       </div>
     </div >

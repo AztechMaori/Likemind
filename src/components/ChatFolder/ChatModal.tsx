@@ -1,22 +1,34 @@
+import type { Setter } from "solid-js"
 import "./chatstyles.css"
 
 interface ChatModalProps {
   members: string[]
   gc_name: string
+  SetGcname: Setter<string>
 }
 
-//TODO: change the styling of the members to have each person seperated by a comma
-//2 - implement responsive css which makes the chat take up the screen for mobile devices, (create a state which when toggled only activates a style found in a media query)
-// this state should also toggle an optional div - found in the ChatModal component below - to go back to list-people.
+//TODO: 
+//1 - style the gcname and chatmembers for both mobile and larger screens
 
 export default function ChatModal(props: ChatModalProps) {
+
+
+
   return (
-    <div class="chat bg-red-200">
-      <div class="members-box bg-black flex justify-start items-center pl-4 text-white font-bold border border-black border-l-white " >
-        {props.gc_name}:
-        {props.members.map(people => {
-          return <span class="m-1">{people}</span>
-        })}
+    <div class={(props.gc_name == "") ? "bg-red-200 chat" : "bg-purple-500 chat-mobile  "}>
+      <div class="members-box bg-red-400 flex justify-start items-center  text-white font-bold " >
+        <button onClick={() => { props.SetGcname("") }} class="back-button justify-center items-center">back</button>
+        <div class="display-name bg-black flex justify-start items-center pl-3 overflow-x-auto">
+          <span class="mr-2">{props.gc_name}:</span>
+          <span >
+            {props.members.map(person => {
+              return (
+                <span class="mr-1">{person},</span>
+              )
+            })}
+          </span>
+        </div>
+
       </div>
       <div class="chat-box bg-blue-500">
         <div class="message-area bg-white overflow-y-scroll"></div>
