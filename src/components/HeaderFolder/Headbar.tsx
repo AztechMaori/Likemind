@@ -52,7 +52,7 @@ export default function Headbar(props: HeadbarProps) {
                 href="/chats/"
                 class="text-1xl font-bold text-blue-500 hover:text-yellow-500 transition-colors duration-300"
               >
-                Chats
+                Projects
               </a>
             </nav>
           </div>

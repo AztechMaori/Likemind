@@ -1,0 +1,196 @@
+.main-sizing {
+  height: 93%;
+}
+
+.header-sizing {
+  height: 7%;
+}
+
+.item-sizing {
+  height: 92%;
+}
+
+
+.searchbar {
+  height: 9%;
+  width: 100%;
+}
+
+.project-select {
+  width: 35%;
+  height: 100%;
+}
+
+.search {
+  width: 65%;
+  height: 100%;
+}
+
+.search-input {
+  width: 90%;
+  height: 70%;
+}
+
+.search-box {
+  width: 100%;
+  height: 100%;
+}
+
+.portfolio-select {
+  width: 7%;
+  height: 80%;
+}
+
+
+.filter-sizing {
+  height: 8%;
+}
+
+.central {
+  height: 91%;
+  width: 100%;
+}
+
+.project-sizing {
+  height: 85%;
+  width: 85%;
+}
+
+.filter-modal-box {
+  height: 65%;
+  width: 40%;
+  position: absolute;
+
+}
+
+.button_class {
+  font-size: 1.5rem;
+  border-radius: 9999px;
+  padding: 0.75rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  background-color: black;
+  color: white;
+  transition: color 0.3s;
+  transform: translateY(0);
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2)
+}
+
+.button_class:hover {
+  color: #3b82f6;
+  transform: translateY(-6px);
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.button_toggled {
+  font-size: 1.5rem;
+  border: 2px solid white;
+  border-radius: 9999px;
+  padding: 0.75rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  background-color: black;
+  color: #3b82f6;
+}
+
+.search_class {
+  position: absolute;
+  right: 2%;
+  font-size: 1.5rem;
+  color: white;
+  transition: color 0.3s;
+  transform: translateY(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.search_class:hover {
+  color: #3b82f6;
+  transform: translateY(-6px);
+
+
+}
+
+.search_toggled {
+  position: absolute;
+  right: 2%;
+  font-size: 1.5rem;
+  color: #3b82f6;
+
+}
+
+.filter_class {
+  position: absolute;
+  left: 3%;
+  font-size: 1.5rem;
+  color: white;
+  transition: color 0.3s;
+  transform: translateY(0);
+  transition: transform 0.3s ease-in-out;
+
+}
+
+.filter_class:hover {
+  color: #3b82f6;
+  transform: translateY(-6px)
+}
+
+.filter_toggled {
+  position: absolute;
+  left: 3%;
+  font-size: 1.5rem;
+  color: #3b82f6;
+}
+
+@media only screen and (max-width:1000px) {
+
+  .filter-modal-box {
+    height: 50%;
+    width: 70%;
+  }
+
+  .item-sizing {
+    height: 94%;
+  }
+
+  .filter-sizing {
+    height: 6%;
+  }
+
+  .searchbar {
+    height: 4%;
+    width: 100%;
+  }
+
+  .central {
+    height: 96%;
+    width: 100%;
+  }
+
+  .project-select {
+    width: 50%;
+  }
+
+  .search {
+    width: 55%;
+    height: 100%;
+  }
+
+
+}
+
+.pop-on-hover {
+  transform: translateY(0);
+  /* No initial translation */
+  transition: transform 0.3s ease-in-out;
+  /* Smooth transition */
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+  /* Subtle shadow for depth */
+}
+
+.pop-on-hover:hover {
+  transform: translateY(-6px);
+  /* Move element up slightly */
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+  /* Increase shadow on hover */
+}

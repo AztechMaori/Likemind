@@ -1,0 +1,46 @@
+.search-header {
+  height: 12%;
+  width: 100%;
+}
+
+.set-project-type {
+  height: 4%;
+  width: 100%;
+}
+
+.project-class {
+  width: 25%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.search-body {
+  height: 84%;
+  width: 100%;
+}
+
+.fetched-item-box {
+  height: 40%;
+  width: 30%;
+}
+
+@media only screen and (max-width:1000px) {
+  .search-header {
+    height: 7%;
+    width: 100%;
+  }
+
+  .search-body {
+    height: 93%;
+    width: 100%;
+  }
+
+  .fetched-item-box {
+    height: 26%;
+    width: 31%;
+  }
+}
